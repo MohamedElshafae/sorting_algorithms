@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void swap_nodes(listint_t **h, listint_t *n1, listint_t *n2);
+void swap_nodes(listint_t **list, listint_t *n1, listint_t *n2);
 /**
  * insertion_sort_list - sort linkedlist in insertion way
  * @list: pointer of head of the list
