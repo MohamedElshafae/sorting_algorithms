@@ -12,7 +12,8 @@ void max_heapify(int *array, size_t size, size_t i, size_t array_size);
 void heap_sort(int *array, size_t size)
 {
 	int i;
-	if (size < 2 || !size || !array)
+
+	if (!array || size < 2 || !size)
 		return;
 	build_max_heap(array, size);
 
