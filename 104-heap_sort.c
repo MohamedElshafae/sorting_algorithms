@@ -13,7 +13,7 @@ void heap_sort(int *array, size_t size)
 {
 	int i;
 
-	if (!array || size < 2 || !size)
+	if (!array || !size || size < 2)
 		return;
 	build_max_heap(array, size);
 
