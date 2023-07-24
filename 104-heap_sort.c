@@ -61,8 +61,12 @@ void max_heapify(int *array, size_t size, size_t i, size_t array_size)
 		max = right_child;
 	if (max != i)
 	{
-		swap(&array[i], &array[max]);
-		print_array(array, array_size);
+		if (array[0] != array[i])
+		{
+			swap(&array[i], &array[max]);
+			print_array(array, array_size);
+		}
+
 		max_heapify(array, size, max, array_size);
 	}
 }
