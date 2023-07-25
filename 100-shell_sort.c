@@ -11,8 +11,12 @@ void shell_sort(int *array, size_t size)
 
 	if (!array || size < 2)
 		return;
-	while (h < (int)size)
+	while (1)
+	{
 		h = 3 * h + 1;
+		if (h < (int)size)
+			break;
+	}
 
 	while (h > 0)
 	{
@@ -35,5 +39,5 @@ void shell_sort(int *array, size_t size)
 			print_array(array, size);
 			flag = 0;
 		}
-}
+	}
 }
