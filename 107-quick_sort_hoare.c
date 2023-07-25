@@ -63,12 +63,14 @@ int HoarePartition(int *array, int start, int end, size_t size)
 			j--;
 		} while (array[j] > pivot);
 
-		if (i > j)
+		if (i >= j)
 			return (j);
 
-		swap(&array[i], &array[j]);
 		if (array[i] != array[j])
+		{
+			swap(&array[i], &array[j]);
 			print_array(array, size);
+		}
 	}
 }
 /**
