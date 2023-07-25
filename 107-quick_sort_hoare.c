@@ -1,7 +1,8 @@
 #include "sort.h"
 #include <stdio.h>
 
-size_t HoarePartition(int *array, size_t start, size_t end, size_t size);
+int HoarePartition(int *array, int start, int end, size_t size);
+void q_sort_recursive(int *array, int start, int end, size_t size);
 /**
  * quick_sort_hoare - sort array of integer
  * @array:pointer of integer
@@ -21,17 +22,16 @@ void quick_sort_hoare(int *array, size_t size)
  * @end: end index of array part
  * @size:size of array
  */
-void q_sort_recursive(int *array, size_t start, size_t end, size_t size)
+void q_sort_recursive(int *array, int start, int end, size_t size)
 {
-	size_t pivot_index = 0;
+	int pivot_index = 0;
 
 	if (start < end)
 	{
 		pivot_index = HoarePartition(array, start, end, size);
-		if (pivot_index != 0)
-		{
-			q_sort_recursive(array, start, pivot_index, size);
-		}
+
+		q_sort_recursive(array, start, pivot_index, size);
+
 		q_sort_recursive(array, pivot_index + 1, end, size);
 	}
 }
@@ -44,11 +44,10 @@ void q_sort_recursive(int *array, size_t start, size_t end, size_t size)
  * @size:size of array
  * Return: pivot index
  */
-size_t HoarePartition(int *array, size_t start, size_t end, size_t size)
+int HoarePartition(int *array, int start, int end, size_t size)
 {
 	int pivot = array[end];
-	size_t i = start - 1, j = end + 1;
-
+	int i = start - 1, j = end + 1;
 	while (1)
 	{
 		do
