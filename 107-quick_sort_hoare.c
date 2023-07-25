@@ -10,7 +10,7 @@ void q_sort_recursive(int *array, int start, int end, size_t size);
  */
 void quick_sort_hoare(int *array, size_t size)
 {
-	if (size < 2 || !size || !array)
+	if (size < 2 || !array)
 		return;
 	q_sort_recursive(array, 0, size - 1, size);
 }
