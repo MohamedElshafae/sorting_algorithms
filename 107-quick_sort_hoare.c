@@ -63,7 +63,7 @@ int HoarePartition(int *array, int start, int end, size_t size)
 			j--;
 		} while (array[j] > pivot);
 
-		if (i >= j)
+		if (i > j)
 			return (j);
 
 		if (array[i] != array[j])
