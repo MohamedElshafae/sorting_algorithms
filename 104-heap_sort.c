@@ -17,14 +17,11 @@ void heap_sort(int *array, size_t size)
 		return;
 	build_max_heap(array, size);
 
-	for (i = size - 1; i >= 0; i--)
+	for (i = size - 1; i > 0; i--)
 	{
-		if (array[0] != array[i])
-		{
-			swap(&array[0], &array[i]);
-			print_array(array, size);
-		}
 
+		swap(&array[0], &array[i]);
+		print_array(array, size);
 		max_heapify(array, i, 0, size);
 	}
 }
@@ -62,12 +59,8 @@ void max_heapify(int *array, size_t size, size_t i, size_t array_size)
 		max = right_child;
 	if (max != i)
 	{
-		if (array[i] != array[max])
-		{
-			swap(&array[i], &array[max]);
-			print_array(array, array_size);
-		}
-
+		swap(&array[i], &array[max]);
+		print_array(array, array_size);
 		max_heapify(array, size, max, array_size);
 	}
 }
