@@ -48,6 +48,7 @@ int HoarePartition(int *array, int start, int end, size_t size)
 {
 	int pivot = array[end];
 	int i = start - 1, j = end + 1;
+
 	while (1)
 	{
 		do
