@@ -26,7 +26,7 @@ void q_sort_recursive(int *array, int start, int end, size_t size)
 {
 	int pivot_index = 0;
 
-	if (start < end)
+	if (start >= 0 && end >= 0 && start < end)
 	{
 		pivot_index = HoarePartition(array, start, end, size);
 
