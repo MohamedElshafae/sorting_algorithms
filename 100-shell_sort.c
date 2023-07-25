@@ -7,7 +7,7 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	int i, j, h = 1, temp, flag = 0;
+	int i, j, h = 1, temp;
 
 	if (!array || size < 2)
 		return;
@@ -29,15 +29,10 @@ void shell_sort(int *array, size_t size)
 			{
 				array[j] = array[j - h];
 				j -= h;
-				flag = 1;
 			}
 			array[j] = temp;
 		}
 		h /= 3;
-		if (flag == 1)
-		{
-			print_array(array, size);
-			flag = 0;
-		}
+		print_array(array, size);
 	}
 }
