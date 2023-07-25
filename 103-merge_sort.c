@@ -25,7 +25,6 @@ void merge(int *array, int *temp, int left, int mid, int right)
 		else
 			temp[k] = array[j++];
 	}
-	
 	while (j <= right)
 		temp[k++] = array[j++];
 	while (i <= mid)
@@ -51,8 +50,9 @@ void merge_sort_recursive(int *array, int *temp, int left, int right)
 
 	if (left >= right)
 		return;
-	
 	mid = left + (right - left) / 2;
+	if ((left + right) % 2 == 0)
+		mid--;
 	merge_sort_recursive(array, temp, left, mid);
 	merge_sort_recursive(array, temp, mid + 1, right);
 	merge(array, temp, left, mid, right);
