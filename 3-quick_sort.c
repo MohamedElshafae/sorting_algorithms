@@ -5,6 +5,7 @@
  * @array:pointer of integer
  * @size:size of array
  */
+void q_sort_recursive(int *array, size_t start, size_t end, size_t size);
 void quick_sort(int *array, size_t size)
 {
 	if (size < 2 || !size || !array)
